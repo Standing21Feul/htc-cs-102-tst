@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Movie_Application"
         mc:Ignorable="d"
         Title="MainWindow" Height="474.299" Width="713.629">
-    <Grid x:Name="movieListView">
+    <Grid x:Name="grid">
         <TextBox x:Name="titleTextBox" HorizontalAlignment="Left" Height="25" Margin="76,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" TextChanged="TextBox_TextChanged"/>
         <Label x:Name="label" Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="76,310,0,0"/>
         <Label x:Name="label1" Content="Genre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,308,0,0"/>
@@ -14,7 +14,8 @@
         <Label x:Name="label2" Content="Review Score" HorizontalAlignment="Left" Margin="485,308,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="reviewScoreTextBox" HorizontalAlignment="Left" Height="25" Margin="485,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
         <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="579,393,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="174" Margin="137,67,0,0" VerticalAlignment="Top" Width="453">
+        
+        <ListView x:Name="movieListView" HorizontalAlignment="Left" Height="174" Margin="137,67,0,0" VerticalAlignment="Top" Width="453" MouseDoubleClick="listView_MouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="150" Header="Title" DisplayMemberBinding="{Binding Title}"></GridViewColumn>
