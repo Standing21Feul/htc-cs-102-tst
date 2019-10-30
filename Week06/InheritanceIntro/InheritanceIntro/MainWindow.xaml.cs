@@ -49,6 +49,23 @@ namespace InheritanceIntro
             {
                 d.SayName();
             }
+
+            // Make a Duck
+            // Have it say its Name
+
+            Duck duck = new Duck(102, "Hai");
+            duck.SayName();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            // Make a Duck
+            // Make it Quack
+
+            Duck duck = new Duck(12, "Aiden Rutledge");
+            duck.Quack();
+
+
         }
     }
 }
