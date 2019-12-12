@@ -20,8 +20,15 @@ namespace Project
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        List<List<TextBlock>> myLIst = new List<List<TextBlock>>();
+        public Apple AP;
         public MainWindow()
         {
+            AP = new Apple();
+            AP.Row = 2;
+            AP.Column = 3;
+
             InitializeComponent();
             myGrid.Width = 1300;
             myGrid.Height = 1000;
@@ -69,74 +76,27 @@ namespace Project
             myGrid.RowDefinitions.Add(rowDef7);
             myGrid.RowDefinitions.Add(rowDef8);
 
-            // Add the first text cell to the Grid
-            TextBlock txt1 = new TextBlock();
-            txt1.Background = Brushes.Black;
-            Grid.SetRow(txt1, 0);
-            Grid.SetColumn(txt1, 0);
+            for (int i = 0; i < 8; i++)
+            {
+                myLIst.Add(new List<TextBlock>());
+                for (int j = 0; j < 10; j++)
+                {
+                    TextBlock txt = new TextBlock();
+                    txt.Background = Brushes.Black;
+                    Grid.SetRow(txt, i);
+                    Grid.SetColumn(txt, j);
+                    myLIst[i].Add(txt);
+                    myGrid.Children.Add(txt);
+                }
+            }
+            myLIst[AP.Row][AP.Column].Background = Brushes.Red;
 
-            // Add the second text cell to the Grid
-            TextBlock txt2 = new TextBlock();
-            txt2.Background = Brushes.Black;
-            Grid.SetRow(txt2, 1);
-            Grid.SetColumn(txt2, 0);
-
-            // Add the third text cell to the Grid
-            TextBlock txt3 = new TextBlock();
-            txt3.Background = Brushes.Black;
-            Grid.SetRow(txt3, 2);
-            Grid.SetColumn(txt3, 0);
-
-            // Add the fourth text cell to the Grid
-            TextBlock txt4 = new TextBlock();
-            txt4.Background = Brushes.Black;
-            Grid.SetRow(txt4, 3);
-            Grid.SetColumn(txt4, 0);
-
-            // Add the sixth text cell to the Grid
-            TextBlock txt5 = new TextBlock();
-            txt5.Background = Brushes.Black;
-            Grid.SetRow(txt5, 4);
-            Grid.SetColumn(txt5, 0);
-
-            // Add the seventh text cell to the Grid
-            TextBlock txt6 = new TextBlock();
-            txt6.Background = Brushes.Black;
-            Grid.SetRow(txt6, 5);
-            Grid.SetColumn(txt6, 0);
-
-            // Add the final text cell to the Grid
-            TextBlock txt7 = new TextBlock();
-            txt7.Background = Brushes.Black;
-            Grid.SetRow(txt7, 6);
-            Grid.SetColumn(txt7, 0);
-
-            TextBlock txt8 = new TextBlock();
-            txt8.Background = Brushes.Black;
-            Grid.SetRow(txt8, 7);
-            Grid.SetColumn(txt8, 0);
-
-            TextBlock txt9 = new TextBlock();
-            txt9.Background = Brushes.Black;
-            Grid.SetRow(txt9, 8);
-            Grid.SetColumn(txt9, 0);
-
-            // Total all Data and Span Three Columns
+            
 
 
-            // Add the TextBlock elements to the Grid Children collection
-            myGrid.Children.Add(txt1);
-            myGrid.Children.Add(txt2);
-            myGrid.Children.Add(txt3);
-            myGrid.Children.Add(txt4);
-            myGrid.Children.Add(txt5);
-            myGrid.Children.Add(txt6);
-            myGrid.Children.Add(txt7);
-            myGrid.Children.Add(txt8);
-
-            List<List<TextBlock>> myLIst = new List<List<TextBlock>>();
-            myLIst[3][6].Background = Brushes.Black;
-
+        }
+        public void Click(int Row, int Column)
+        {
 
         }
     }
